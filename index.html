@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Érase una vez - Eventos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap'); /* Alternativa si Script MT Bold no está disponible */
+
+        body {
+            background-image: url(Recursos/FondoPagina.png); /* Reemplaza con tu imagen */
+            background-size: contain;
+            background-position: center;
+            height: 100vh;
+            color: rgb(255, 217, 0);
+            font-family: 'Script MT Bold', 'Dancing Script', cursive; /* Se prioriza Script MT Bold */
+        }
+
+        h1, h2, nav, p {
+            font-family: 'Script MT Bold', 'Dancing Script', cursive;
+        }
+    </style>
+</head>
+<body class="relative">
+    
+    <!-- Menú de navegación -->
+    <header class="absolute top-0 right-0 p-4">
+        <nav class="bg-black bg-opacity-80 text-gold-500 p-4 rounded-lg shadow-lg">
+            <ul class="flex space-x-6">
+                <li><a href="foto.html" class="hover:text-yellow-400">Fotos</a></li>
+                <li><a href="videos.html" class="hover:text-yellow-400">Videos</a></li>
+                <li><a href="paquetes.html" class="hover:text-yellow-400">Paquetes</a></li>
+                <li><a href="alquiler.html" class="hover:text-yellow-400">Alquiler de Inmobiliario</a></li>
+                <li><a href="contactanos.html" class="hover:text-yellow-400">Contáctanos</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <!-- Mensaje de bienvenida -->
+    <main class="flex flex-col items-center justify-center h-screen text-center">
+        <h1 class="text-7xl font-bold drop-shadow-lg">Bienvenidos a Érase una vez</h1>
+        <h2 class="text-5xl mt-4">Salón de Eventos y Catering</h2>
+    </main>
+</body>
+</html>

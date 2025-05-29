@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Videos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap'); /* Alternativa si Script MT Bold no está disponible */
+
+        body {
+            background-image: url(Recursos/fondo1.png);
+            background-size: cover;
+            background-position: center;
+            color: #b8860b;
+            font-family: 'Script MT Bold', 'Dancing Script', cursive;
+        }
+
+        h1, h2, nav, p, li {
+            font-family: 'Script MT Bold', 'Dancing Script', cursive;
+        }
+
+        /* Animación para que los videos aparezcan con un efecto fade-in */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInAnimation 1s ease-out forwards;
+        }
+
+        @keyframes fadeInAnimation {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body class="p-10">
+    <!-- Menú de navegación -->
+    <header class="absolute top-0 right-0 p-4">
+        <nav class="bg-black bg-opacity-80 text-gold-500 p-4 rounded-lg shadow-lg">
+            <ul class="flex space-x-6">
+                <li><a href="index.html" class="hover:text-yellow-400">Página Principal</a></li>
+                <li><a href="foto.html" class="hover:text-yellow-400">Fotos</a></li>
+                <li><a href="paquetes.html" class="hover:text-yellow-400">Paquetes</a></li>
+                <li><a href="alquiler.html" class="hover:text-yellow-400">Alquiler de Inmobiliario</a></li>
+                <li><a href="contactanos.html" class="hover:text-yellow-400">Contáctanos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h1 class="text-4xl font-bold text-center mb-6">Galería de Videos</h1>
+    
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <script>
+            for (let i = 1; i <= 10; i++) {
+                document.write(`
+                    <div class="bg-black bg-opacity-70 p-4 rounded-lg shadow-lg text-center fade-in">
+                        <video class="w-full max-w-full h-auto aspect-video rounded-lg mb-2" muted>
+                            <source src="Recursos/video${i}.mp4" type="video/mp4">
+                            Tu navegador no soporta el video.
+                        </video>
+                        <p class="text-lg">MOMENTOS INOLVIDABLES</p>
+                    </div>
+                `);
+            }
+
+            // Agregamos el evento para que los videos se reproduzcan al pasar el mouse y se detengan al salir
+            window.onload = function() {
+                document.querySelectorAll("video").forEach(video => {
+                    video.addEventListener("mouseenter", () => {
+                        video.play();
+                    });
+                    video.addEventListener("mouseleave", () => {
+                        video.pause();
+                        video.currentTime = 0; // Reinicia el video al inicio
+                    });
+                });
+            };
+        </script>
+    </div>
+</body>
+</html>
